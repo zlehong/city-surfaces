@@ -44,6 +44,8 @@ import datasets
 import network
 import pandas as pd
 import numpy as np
+import copy
+import datetime
 
 # Import autoresume module
 sys.path.append(os.environ.get("SUBMIT_SCRIPTS", "."))
@@ -444,9 +446,7 @@ parser.add_argument(
 )
 
 
-# args = parser.parse_args()
-# Google CoLab edit
-args = parser.parse_args(args=[])
+args = parser.parse_args()
 args.best_record = {
     "epoch": -1,
     "iter": 0,

@@ -49,6 +49,7 @@ cfg = __C
 __C.GLOBAL_RANK = 0
 __C.EPOCH = 0
 # Absolute path to a location to keep some large files, not in this dir.
+# CHANGE THIS TO GOOGLE DRIVE LOCATION OF PRETRAINED WEIGHTS
 __C.ASSETS_PATH = ""
 
 # Use class weighted loss per batch to increase loss for low pixel count classes per batch
@@ -61,7 +62,7 @@ __C.REDUCE_BORDER_EPOCH = -1
 # Comma Seperated List of class id to relax
 __C.STRICTBORDERCLASS = None
 # Where output results get written
-__C.RESULT_DIR = ""
+__C.RESULT_DIR = "/content/drive/MyDrive/11320/CitySurfaces"
 
 __C.OPTIONS = AttrDict()
 __C.OPTIONS.TEST_MODE = False
@@ -151,8 +152,11 @@ __C.MODEL.WRN41_CHECKPOINT = os.path.join(
     WEIGHTS_PATH, "wider_resnet41_cornflower_sunfish.pth"
 )
 __C.MODEL.X71_CHECKPOINT = os.path.join(WEIGHTS_PATH, "aligned_xception71.pth")
+# __C.MODEL.HRNET_CHECKPOINT = os.path.join(
+#     WEIGHTS_PATH, "hrnetv2_w48_imagenet_pretrained.pth"
+# )
 __C.MODEL.HRNET_CHECKPOINT = os.path.join(
-    WEIGHTS_PATH, "hrnetv2_w48_imagenet_pretrained.pth"
+    WEIGHTS_PATH, "ocrnet.HRNet_industrious-chicken.pth"
 )
 
 __C.LOSS = AttrDict()
