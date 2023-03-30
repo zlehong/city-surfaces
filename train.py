@@ -268,7 +268,9 @@ parser.add_argument('--tau_factor', type=float, default=1,
                     help='Factor for NASA optimzation function')
 
 
-args = parser.parse_args()
+# args = parser.parse_args()
+# Google CoLab edit
+args = parser.parse_args(args=[])
 args.best_record = {'epoch': -1, 'iter': 0, 'val_loss': 1e10, 'acc': 0,
                     'acc_cls': 0, 'mean_iu': 0, 'fwavacc': 0}
 
