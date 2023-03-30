@@ -49,7 +49,7 @@ cfg = __C
 __C.GLOBAL_RANK = 0
 __C.EPOCH = 0
 # Absolute path to a location to keep some large files, not in this dir.
-__C.ASSETS_PATH = ''
+__C.ASSETS_PATH = ""
 
 # Use class weighted loss per batch to increase loss for low pixel count classes per batch
 __C.BATCH_WEIGHTING = True
@@ -61,7 +61,7 @@ __C.REDUCE_BORDER_EPOCH = -1
 # Comma Seperated List of class id to relax
 __C.STRICTBORDERCLASS = None
 # Where output results get written
-__C.RESULT_DIR = ''
+__C.RESULT_DIR = ""
 
 __C.OPTIONS = AttrDict()
 __C.OPTIONS.TEST_MODE = False
@@ -73,38 +73,37 @@ __C.TRAIN.RANDOM_BRIGHTNESS_SHIFT_VALUE = 10
 __C.TRAIN.FP16 = False
 
 
-#Attribute Dictionary for Dataset
+# Attribute Dictionary for Dataset
 __C.DATASET = AttrDict()
-#Cityscapes Dir Location
-__C.DATASET.CITYSCAPES_DIR = \
-  os.path.join(__C.ASSETS_PATH, 'data/Cityscapes')
+# Cityscapes Dir Location
+__C.DATASET.CITYSCAPES_DIR = os.path.join(__C.ASSETS_PATH, "data/Cityscapes")
 
-__C.DATASET.CITYSCAPES_CUSTOMCOARSE = \
-  os.path.join(__C.ASSETS_PATH, 'data/Cityscapes/autolabelled')
+__C.DATASET.CITYSCAPES_CUSTOMCOARSE = os.path.join(
+    __C.ASSETS_PATH, "data/Cityscapes/autolabelled"
+)
 
-__C.DATASET.CENTROID_ROOT = \
-  os.path.join(__C.ASSETS_PATH, 'uniform_centroids')
-#SDC Augmented Cityscapes Dir Location
-__C.DATASET.CITYSCAPES_AUG_DIR = ''
-#Mapillary Dataset Dir Location
-__C.DATASET.MAPILLARY_DIR = os.path.join(__C.ASSETS_PATH, 'data/Mapillary/data')
-#Kitti Dataset Dir Location
-__C.DATASET.KITTI_DIR = ''
-#CitySurfaces Dataset Dir Location
-__C.DATASET.CITYSURFACES_DIR = os.path.join(__C.ASSETS_PATH, 'data/citysurfaces')
-#SDC Augmented Kitti Dataset Dir Location
-__C.DATASET.KITTI_AUG_DIR = ''
-#Camvid Dataset Dir Location
-__C.DATASET.CAMVID_DIR = ''
-#Number of splits to support
+__C.DATASET.CENTROID_ROOT = os.path.join(__C.ASSETS_PATH, "uniform_centroids")
+# SDC Augmented Cityscapes Dir Location
+__C.DATASET.CITYSCAPES_AUG_DIR = ""
+# Mapillary Dataset Dir Location
+__C.DATASET.MAPILLARY_DIR = os.path.join(__C.ASSETS_PATH, "data/Mapillary/data")
+# Kitti Dataset Dir Location
+__C.DATASET.KITTI_DIR = ""
+# CitySurfaces Dataset Dir Location
+__C.DATASET.CITYSURFACES_DIR = os.path.join(__C.ASSETS_PATH, "data/citysurfaces")
+# SDC Augmented Kitti Dataset Dir Location
+__C.DATASET.KITTI_AUG_DIR = ""
+# Camvid Dataset Dir Location
+__C.DATASET.CAMVID_DIR = ""
+# Number of splits to support
 __C.DATASET.CITYSCAPES_SPLITS = 3
-#Number of splits to support
+# Number of splits to support
 __C.DATASET.CITYSCAPES_SPLITS = 3
-#Number of splits to support
+# Number of splits to support
 __C.DATASET.CITYSCAPES_SPLITS = 3
 __C.DATASET.MEAN = [0.485, 0.456, 0.406]
 __C.DATASET.STD = [0.229, 0.224, 0.225]
-__C.DATASET.NAME = ''
+__C.DATASET.NAME = ""
 __C.DATASET.NUM_CLASSES = 0
 __C.DATASET.IGNORE_LABEL = -1
 __C.DATASET.DUMP_IMAGES = False
@@ -123,15 +122,15 @@ __C.DATASET.LANCZOS_SCALES = False
 # Use a center crop of size args.pre_size for mapillary validation
 # Need to use this if you want to dump images
 __C.DATASET.MAPILLARY_CROP_VAL = False
-__C.DATASET.CROP_SIZE = '896'
+__C.DATASET.CROP_SIZE = "896"
 
 __C.MODEL = AttrDict()
-__C.MODEL.BN = 'regularnorm'
+__C.MODEL.BN = "regularnorm"
 __C.MODEL.BNFUNC = None
 __C.MODEL.MSCALE = False
 __C.MODEL.THREE_SCALE = False
 __C.MODEL.ALT_TWO_SCALE = False
-__C.MODEL.EXTRA_SCALES = '0.5,1.5'
+__C.MODEL.EXTRA_SCALES = "0.5,1.5"
 __C.MODEL.N_SCALES = None
 __C.MODEL.ALIGN_CORNERS = False
 __C.MODEL.MSCALE_LO_SCALE = 0.5
@@ -146,15 +145,15 @@ __C.MODEL.MSCALE_INIT = 0.5
 __C.MODEL.ATTNSCALE_BN_HEAD = False
 __C.MODEL.GRAD_CKPT = False
 
-WEIGHTS_PATH = os.path.join(__C.ASSETS_PATH, 'seg_weights')
-__C.MODEL.WRN38_CHECKPOINT = \
-    os.path.join(WEIGHTS_PATH, 'wider_resnet38.pth.tar')
-__C.MODEL.WRN41_CHECKPOINT = \
-    os.path.join(WEIGHTS_PATH, 'wider_resnet41_cornflower_sunfish.pth')
-__C.MODEL.X71_CHECKPOINT = \
-    os.path.join(WEIGHTS_PATH, 'aligned_xception71.pth')
-__C.MODEL.HRNET_CHECKPOINT = \
-    os.path.join(WEIGHTS_PATH, 'hrnetv2_w48_imagenet_pretrained.pth')
+WEIGHTS_PATH = os.path.join(__C.ASSETS_PATH, "seg_weights")
+__C.MODEL.WRN38_CHECKPOINT = os.path.join(WEIGHTS_PATH, "wider_resnet38.pth.tar")
+__C.MODEL.WRN41_CHECKPOINT = os.path.join(
+    WEIGHTS_PATH, "wider_resnet41_cornflower_sunfish.pth"
+)
+__C.MODEL.X71_CHECKPOINT = os.path.join(WEIGHTS_PATH, "aligned_xception71.pth")
+__C.MODEL.HRNET_CHECKPOINT = os.path.join(
+    WEIGHTS_PATH, "hrnetv2_w48_imagenet_pretrained.pth"
+)
 
 __C.LOSS = AttrDict()
 # Weight for OCR aux loss
@@ -172,42 +171,42 @@ __C.MODEL.OCR_EXTRA.FINAL_CONV_KERNEL = 1
 __C.MODEL.OCR_EXTRA.STAGE1 = AttrDict()
 __C.MODEL.OCR_EXTRA.STAGE1.NUM_MODULES = 1
 __C.MODEL.OCR_EXTRA.STAGE1.NUM_RANCHES = 1
-__C.MODEL.OCR_EXTRA.STAGE1.BLOCK = 'BOTTLENECK'
+__C.MODEL.OCR_EXTRA.STAGE1.BLOCK = "BOTTLENECK"
 __C.MODEL.OCR_EXTRA.STAGE1.NUM_BLOCKS = [4]
 __C.MODEL.OCR_EXTRA.STAGE1.NUM_CHANNELS = [64]
-__C.MODEL.OCR_EXTRA.STAGE1.FUSE_METHOD = 'SUM'
+__C.MODEL.OCR_EXTRA.STAGE1.FUSE_METHOD = "SUM"
 __C.MODEL.OCR_EXTRA.STAGE2 = AttrDict()
 __C.MODEL.OCR_EXTRA.STAGE2.NUM_MODULES = 1
 __C.MODEL.OCR_EXTRA.STAGE2.NUM_BRANCHES = 2
-__C.MODEL.OCR_EXTRA.STAGE2.BLOCK = 'BASIC'
+__C.MODEL.OCR_EXTRA.STAGE2.BLOCK = "BASIC"
 __C.MODEL.OCR_EXTRA.STAGE2.NUM_BLOCKS = [4, 4]
 __C.MODEL.OCR_EXTRA.STAGE2.NUM_CHANNELS = [48, 96]
-__C.MODEL.OCR_EXTRA.STAGE2.FUSE_METHOD = 'SUM'
+__C.MODEL.OCR_EXTRA.STAGE2.FUSE_METHOD = "SUM"
 __C.MODEL.OCR_EXTRA.STAGE3 = AttrDict()
 __C.MODEL.OCR_EXTRA.STAGE3.NUM_MODULES = 4
 __C.MODEL.OCR_EXTRA.STAGE3.NUM_BRANCHES = 3
-__C.MODEL.OCR_EXTRA.STAGE3.BLOCK = 'BASIC'
+__C.MODEL.OCR_EXTRA.STAGE3.BLOCK = "BASIC"
 __C.MODEL.OCR_EXTRA.STAGE3.NUM_BLOCKS = [4, 4, 4]
 __C.MODEL.OCR_EXTRA.STAGE3.NUM_CHANNELS = [48, 96, 192]
-__C.MODEL.OCR_EXTRA.STAGE3.FUSE_METHOD = 'SUM'
+__C.MODEL.OCR_EXTRA.STAGE3.FUSE_METHOD = "SUM"
 __C.MODEL.OCR_EXTRA.STAGE4 = AttrDict()
 __C.MODEL.OCR_EXTRA.STAGE4.NUM_MODULES = 3
 __C.MODEL.OCR_EXTRA.STAGE4.NUM_BRANCHES = 4
-__C.MODEL.OCR_EXTRA.STAGE4.BLOCK = 'BASIC'
+__C.MODEL.OCR_EXTRA.STAGE4.BLOCK = "BASIC"
 __C.MODEL.OCR_EXTRA.STAGE4.NUM_BLOCKS = [4, 4, 4, 4]
 __C.MODEL.OCR_EXTRA.STAGE4.NUM_CHANNELS = [48, 96, 192, 384]
-__C.MODEL.OCR_EXTRA.STAGE4.FUSE_METHOD = 'SUM'
+__C.MODEL.OCR_EXTRA.STAGE4.FUSE_METHOD = "SUM"
 
 
 def torch_version_float():
     version_str = torch.__version__
-    version_re = re.search(r'^([0-9]+\.[0-9]+)', version_str)
+    version_re = re.search(r"^([0-9]+\.[0-9]+)", version_str)
     if version_re:
         version = float(version_re.group(1))
-        logx.msg(f'Torch version: {version}, {version_str}')
+        logx.msg(f"Torch version: {version}, {version_str}")
     else:
         version = 1.0
-        logx.msg(f'Can\'t parse torch version ({version}), assuming {version}')
+        logx.msg(f"Can't parse torch version ({version}), assuming {version}")
     return version
 
 
@@ -222,20 +221,25 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
 
     __C.OPTIONS.TORCH_VERSION = torch_version_float()
 
-    if hasattr(args, 'syncbn') and args.syncbn:
+    if hasattr(args, "syncbn") and args.syncbn:
         if args.apex:
             import apex
-            __C.MODEL.BN = 'apex-syncnorm'
+
+            __C.MODEL.BN = "apex-syncnorm"
             __C.MODEL.BNFUNC = apex.parallel.SyncBatchNorm
         else:
-            raise Exception('No Support for SyncBN without Apex')
+            raise Exception("No Support for SyncBN without Apex")
     else:
         __C.MODEL.BNFUNC = torch.nn.BatchNorm2d
-        print('Using regular batch norm')
+        print("Using regular batch norm")
 
     if not train_mode:
         cfg.immutable(True)
         return
+
+    if args.assets_path:
+        # Edit for google colab
+        __C.ASSETS_PATH = args.assets_path
 
     if args.batch_weighting:
         __C.BATCH_WEIGHTING = True
@@ -244,7 +248,7 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
         __C.DATASET.CUSTOM_COARSE_PROB = args.custom_coarse_prob
 
     if args.jointwtborder:
-        if args.strict_bdr_cls != '':
+        if args.strict_bdr_cls != "":
             strict_classes = [int(i) for i in args.strict_bdr_cls.split(",")]
             __C.STRICTBORDERCLASS = strict_classes
         if args.rlx_off_epoch > -1:
@@ -256,16 +260,17 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
     cfg.DATASET.CLASS_UNIFORM_PCT = args.class_uniform_pct
     cfg.DATASET.CLASS_UNIFORM_TILE = args.class_uniform_tile
     if args.coarse_boost_classes:
-        cfg.DATASET.COARSE_BOOST_CLASSES = \
-            [int(i) for i in args.coarse_boost_classes.split(',')]
+        cfg.DATASET.COARSE_BOOST_CLASSES = [
+            int(i) for i in args.coarse_boost_classes.split(",")
+        ]
 
     cfg.DATASET.CLASS_UNIFORM_BIAS = None
 
-    if args.dump_assets and args.dataset == 'cityscapes':
+    if args.dump_assets and args.dataset == "cityscapes":
         # A hacky way to force that when we dump cityscapes
-        logx.msg('*' * 70)
-        logx.msg(f'ALERT: forcing cv=3 to allow all images to be evaluated')
-        logx.msg('*' * 70)
+        logx.msg("*" * 70)
+        logx.msg(f"ALERT: forcing cv=3 to allow all images to be evaluated")
+        logx.msg("*" * 70)
         cfg.DATASET.CV = 3
     else:
         cfg.DATASET.CV = args.cv
@@ -275,8 +280,7 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
     if args.translate_aug_fix:
         cfg.DATASET.TRANSLATE_AUG_FIX = True
 
-    cfg.MODEL.MSCALE = ('mscale' in args.arch.lower() or 'attnscale' in
-                        args.arch.lower())
+    cfg.MODEL.MSCALE = "mscale" in args.arch.lower() or "attnscale" in args.arch.lower()
 
     if args.three_scale:
         cfg.MODEL.THREE_SCALE = True
@@ -287,13 +291,13 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
     cfg.MODEL.MSCALE_LO_SCALE = args.mscale_lo_scale
 
     def str2list(s):
-        alist = s.split(',')
+        alist = s.split(",")
         alist = [float(x) for x in alist]
         return alist
 
     if args.n_scales:
         cfg.MODEL.N_SCALES = str2list(args.n_scales)
-        logx.msg('n scales {}'.format(cfg.MODEL.N_SCALES))
+        logx.msg("n scales {}".format(cfg.MODEL.N_SCALES))
 
     if args.extra_scales:
         cfg.MODEL.EXTRA_SCALES = str2list(args.extra_scales)
@@ -305,7 +309,6 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
         cfg.OPTIONS.INIT_DECODER = True
 
     __C.RESULT_DIR = args.result_dir
-   
 
     if args.mask_out_cityscapes:
         cfg.DATASET.MASK_OUT_CITYSCAPES = True
@@ -355,8 +358,9 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
 
     cfg.DROPOUT_COARSE_BOOST_CLASSES = None
     if args.custom_coarse_dropout_classes:
-        cfg.DROPOUT_COARSE_BOOST_CLASSES = \
-            [int(i) for i in args.custom_coarse_dropout_classes.split(',')]
+        cfg.DROPOUT_COARSE_BOOST_CLASSES = [
+            int(i) for i in args.custom_coarse_dropout_classes.split(",")
+        ]
 
     if args.grad_ckpt:
         __C.MODEL.GRAD_CKPT = True
@@ -365,7 +369,7 @@ def assert_and_infer_cfg(args, make_immutable=True, train_mode=True):
 
     if make_immutable:
         cfg.immutable(True)
-    
+
 
 def update_epoch(epoch):
     # Update EPOCH CTR
@@ -378,7 +382,7 @@ def update_dataset_cfg(num_classes, ignore_label):
     cfg.immutable(False)
     cfg.DATASET.NUM_CLASSES = num_classes
     cfg.DATASET.IGNORE_LABEL = ignore_label
-    logx.msg('num_classes = {}'.format(num_classes))
+    logx.msg("num_classes = {}".format(num_classes))
     cfg.immutable(True)
 
 
